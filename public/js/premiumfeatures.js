@@ -78,12 +78,13 @@ function showLeaderboard(data,id) {
         if (index < 25) {
             let text;
             const firstName = ele.name.split(' ')[0];
+            const secName = ele.name.split(' ')[0];
             const li = document.createElement('li');
             li.className = "list-group-item text-nowrap"
             if(id==ele._id){
                  text = `${index + 1}. ${firstName} - Expense: &#8377;${ele.totalexpenses}`;
             }else{
-                text = `${index + 1}. User - Expense: &#8377;${ele.totalexpenses}`; 
+                text = `${index + 1}. ${secName}  - Expense: &#8377;${ele.totalexpenses}`; 
             }
             li.innerHTML = text;
             lbplaceholder.appendChild(li);
@@ -92,6 +93,33 @@ function showLeaderboard(data,id) {
     })
 
 }
+// function showLeaderboard(data, id) {
+//     lbplaceholder.innerHTML = "";
+//     data.forEach((ele, index) => {
+//         if (index < 25) {
+//             let text;
+//             let firstName;
+//             // Check if 'name' is a string or an object
+//             if (typeof ele.name === 'string') {
+//                 firstName = ele.name.split(' ')[0];
+//             } else if (ele.name && ele.name.first) {
+//                 firstName = ele.name.first;
+//             } else {
+//                 firstName = 'User';
+//             }
+//             const li = document.createElement('li');
+//             li.className = "list-group-item text-nowrap"
+//             if (id == ele._id) {
+//                 text = `${index + 1}. ${firstName} - Expense: &#8377;${ele.totalexpenses}`;
+//             } else {
+//                 text = `${index + 1}. User - Expense: &#8377;${ele.totalexpenses}`;
+//             }
+//             li.innerHTML = text;
+//             lbplaceholder.appendChild(li);
+//         }
+//     });
+// }
+
 function showDownloadhistory(data) {
     if (data.length > 0) {
         historyplaceholder.innerHTML = "";

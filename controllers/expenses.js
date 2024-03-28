@@ -34,6 +34,7 @@ exports.getExpenses = async (request, response, nex) => {
             hasMoreExpenses : expenses.length === limit,
             hasPreviousExpenses : page > 1
         });
+        
 
     } catch (error) {
         console.log(error);
